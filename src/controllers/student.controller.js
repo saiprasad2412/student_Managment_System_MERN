@@ -28,7 +28,9 @@ const createStudent = async (req, res) => {
 }
 const getStudentInfo = async (req, res) => {
     try {
-        const student = await Student.findById(req.params.id)
+        // const student = await Student.findById(req.params.id).populate('coursesEnrolled',courseName)
+        const student = await Student.findById(req.params.id).populate("coursesEnrolled");
+
         // .populate("Course").exec();
         if(!student) {
             return res.status(404).json({success:false, message:"Student not found"});
