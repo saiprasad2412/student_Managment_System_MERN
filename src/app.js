@@ -12,8 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 import userRouter from "./routes/user.routes.js";
 import studentRouter from "./routes/student.routes.js";
 import courseRouter from "./routes/course.routes.js";
+import teacherRouter from "./routes/teacher.routes.js";
 app.use("/api/v1/auth", userRouter);
 app.use("/api/v1/students",studentRouter);
-app.use("/api/v1/course",courseRouter);
+app.use("/api/v1/courses",courseRouter);
+app.use("/api/v1/teacher",teacherRouter);
 
 export {app}
