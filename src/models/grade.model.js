@@ -13,7 +13,7 @@ const gradeSchema= new mongoose.Schema({
     },
     assignmentName:{
         type:String,
-        required:true
+        // required:true
     },
     marksObtained:{
         type:Number,
@@ -28,4 +28,4 @@ const gradeSchema= new mongoose.Schema({
         default:Date.now
     }
 });
-const Grade= mongoose.model("Grade", gradeSchema);
+export const Grade= mongoose.model("Grade", gradeSchema);
