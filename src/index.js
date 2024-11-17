@@ -14,11 +14,14 @@
 import dotenv from 'dotenv'
 import connectDB from "./db/index.js";
 import { app } from './app.js';
+import cors from "cors";
 
 
 dotenv.config({
     path:'./env'
 })
+
+
 
 
 connectDB().then(()=>{

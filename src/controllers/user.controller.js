@@ -3,8 +3,8 @@ import {User} from "../models/user.model.js"
 
 const registerUser = async(req,res)=>{
     try {
-        const {email,password, role}=req.body;
-        if(email==="" || password==="" || role===""){
+        const {firstName,lastName,email,password, role}=req.body;
+        if(firstName==="" || lastName==="" || email==="" || password==="" || role===""){
             return res.status(400).json({
                 success:false,
                 message:"Please fill all the fields"
@@ -20,6 +20,8 @@ const registerUser = async(req,res)=>{
         }
 
         const user= await User.create({
+            firstName,
+            lastName,
             email,
             password,
             role
